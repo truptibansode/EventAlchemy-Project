@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    <link rel="stylesheet" href="static/css/userprofile.css">
+    <!-- You can create a separate CSS file for styling the user profile page if needed. -->
+    <title>My Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+  </head>
+
+<body class="userprofilebody">
+    <header>
+        <nav>
+            <div class="menu">
+                <div class="logo">
+                    <a href="/"><img src="static/logo.jpeg" alt="logo-eventalchemy" height="60px" width="60px"></a>
+                </div>
+                <div class="menunav">
+    
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/eventSchedule">Event Listings</a></li>
+                        <li><a href="/service">Services</a></li>
+                        <li><a href="/testimonials">Customer Reviews</a></li>
+                        <li><a href="/user-profile">My Profile</a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                        <!--<li><a href="/forgot_password">Forgot Password</a></li>  -->  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--<div class="pageheading">
+            <h1>User Profile</h1>
+            <br><br>
+        </div>-->
+    </header>
+    <main>
+        <div class="container-up">
+                <div class="pfpdiv">
+                    <!-- Display the profile picture if available -->
+                    {% if pfp %}
+                    <img src="{{pfp}}" alt="Profile Picture">
+                    {% else %}
+                    <p>No profile picture available</p>
+                    {% endif %}
+                </div>
+
+                <div class="prof-box">
+                <div class="infodiv">
+                    <div class="label1">
+                        <div class="label-div">
+                            <p class="user-info userdiv"><i class="fa-solid fa-at"></i> {{ username }}</p>
+                        </div>
+    
+                        <div class="label-div">
+                            <p class='user-info leftaligned'><i class="fa-solid fa-user"></i> {{ name }}</p>
+                        </div>
+                    </div>
+
+                   <div class="label1">
+                    <div class="label-div">
+                        <p class='user-info'><i class="fa-solid fa-phone"></i> {{ contactinfo }}</p>
+                    </div>
+
+                    <div class="label-div">
+                        <p class='user-info aligner'><i class="fa-solid fa-envelope-open"></i> {{ Email }}</p>
+                    </div>
+                   </div>
+
+
+                    <div class="label1">
+                        <div class="label-div">
+                            <p class='user-info'><i class="fa-solid fa-person"></i> {{ gender }}</p>
+                        </div>
+    
+                        <div class="label-div">
+                            <p class='user-info leftaligned'><i class="fa-regular fa-address-book"></i> {{ age }}</p>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
+            
+            <div class="redirectdiv">
+                
+                <button type="submit" onclick="edit()">Edit Profile</button>
+
+                <button type="submit" onclick="createevent()">Create Event</button>
+            </div>
+        </div>
+
+        {% if events %}
+        <div class="container-ed">
+            <h2>Events created by you:</h2>
+            <div class="con-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Event Name</th>
+                            <th>Date Of Event</th>
+                            <th>Location</th>
+                            <th>Theme</th>
+                            <th>No. Of Attendees</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                        <tr>
+                            <td>{{ event[0] }}</td>
+                            <td>{{event[1]}}</td>
+                            <td>{{event[2]}}</td>
+                            <td>{{event[3]}}</td>
+                            <td>{{event[4]}}</td>
+                            <td>{{event[5]}}</td>
+                            <td>
+                                {% if event[6] == 'approved' %}
+                                <span style="color: green;">Approved</span>
+                                {% elif event[6] == 'rejected' %}
+                                <span style="color: red;">Rejected</span>
+                                {% else %}
+                                <span>Pending</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer style="background-color: #290907;">
+        <div class="foot-cont">
+           <a href="/"> <img src="static/logo.jpeg" alt="EventAlchemy" width="200px"></a>
+            <div class="footer0">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/eventSchedule">Event Listings</a></li>
+                    <li><a href="/service">Services</a></li>
+                    <li><a href="/testimonials">Customer Reviews</a></li>
+                    {% if username %}
+                    <li><a href="/logout">Log Out</a></li>
+                    <li><a href="/forgot_password">forgot password</a></li>
+                    {% else %}
+                    <li><a href="/login">Log-in</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="footer1">
+                <h4>Address:</h4>
+                <p> 13th floor, Labyrinth Towers, Cornelia Street, 16th Avenue, Wonderland. Pin Code: 401989</p>
+            </div>
+            <div class="footer1">
+                <h4>FAQs</h4>
+                <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">How can i book for an event?</p>
+                <p>You can fill out our Contact form simply and our team will get back to you!</p> <br><br>
+                <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">What is the payment process like?</p>
+                <p>you will have to pay a booking advance amount to us before we proceed with the event plan!</p>
+            </div>
+        </div>
+        <div class="foot-cont2">
+            <div class="socials">
+                <p>Follow us on social media:</p>
+                <div class="socialimg">
+    
+                <div class="twitter">
+                <img src="static/twitter.jpg" alt="twitter" title="twitter" onclick="twitter()" width="40px" height="40px">
+            </div>
+    
+                <div class="instagram">
+                <img src="static/instagram2.jpg.jpeg" alt="instagram" title="instagram" onclick="instagram()"  width="40px" height="40px">
+            </div>
+                <div class="linkedin">
+                <img src="static/linkedin.jpg" alt="linked-in" title="linked-in" onclick="linkedin()" width="40px" height="40px">
+            </div>
+    
+                <div class="facebook">
+                <img src="static/facebook.jpg" alt="Facebook" title="Facebook" onclick="facebook()" width="40px" height="40px" >
+            </div>
+                <div class="snapchat">
+                <img src="static/snapchat.jpeg" alt="snapchat" title="snapchat" onclick="snapchat()" width="40px" height="40px">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div id="authorname">
+            <p> All rights reserved © EventAlchemy Inc. 2023. Designed by Trupti Bansode.</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script>
+    
+        function twitter(){
+            window.location.href="https://twitter.com/"
+        }
+    
+        function instagram(){
+            window.location.href="https://instagram.com/tobesotrupti?igshid=NzZlODBkYWE4Ng=="
+        }
+    
+        function linkedin(){
+            window.location.href="https://www.linkedin.com/in/truptibansode"
+        }
+    
+        function facebook(){
+            window.location.href="https://www.facebook.com/profile.php?id=100016222260085&mibextid=ZbWKwL"
+        }
+    
+        function snapchat(){
+            window.location.href="https://www.snapchat.com/add/trupti1910?share_id=JIdkDfNkgK0&locale=en-US"
+        }
+    
+
+        function edit(){
+            window.location.href='/edit-profile'
+        }
+
+        function createevent(){
+            window.location.href='/create_event'
+        }
+
+        
+    var currentPageURL = window.location.pathname;
+
+    // Get all the <a> elements within the navigation menu
+    var menuLinks = document.querySelectorAll(".menunav a");
+
+    // Loop through the <a> elements and add the 'active' class to the corresponding <li>
+    for (var i = 0; i < menuLinks.length; i++) {
+        var link = menuLinks[i];
+        if (link.getAttribute("href") === currentPageURL) {
+            link.parentNode.classList.add("active");
+            break; // Stop looping after the first match is found
+        }
+    }
+
+    </script>
+
+   </body>
+
+</html>

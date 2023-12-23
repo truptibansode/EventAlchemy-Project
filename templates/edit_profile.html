@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit profile</title>
+    <link rel="stylesheet" href="/static/css/userprofile.css">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cropper@4.1.0/dist/cropper.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/cropper@4.1.0/dist/cropper.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+</head>
+<body id="e-p-body">
+
+<header>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="/"><img src="static/logo.jpeg" alt="logo-eventalchemy" height="60px" width="60px"></a>
+            </div>
+            <div class="menunav">
+
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/eventSchedule">Event Listings</a></li>
+                    <li><a href="/service">Services</a></li>
+                    <li><a href="/testimonials">Customer Reviews</a></li>
+                   <!-- <li><a href="/user-profile">My Profile</a></li>-->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    
+<main>
+   <div class="ep-con">
+    <form method="post" action="/edit-profile"  enctype="multipart/form-data">
+        <h1>Edit Profile</h1>
+        <fieldset style="display: block;">
+            <img id="imagePreview" style="max-width: 100%; max-height: 200px; border-radius: 50%; margin: auto; display: flex; justify-content: center;border: 1px solid #290907;">
+            <input type="file" id="fileInput" name="pfp" accept="image/*" onchange="previewImage()" style="width: 40%;  display: flex; justify-content: center; margin: 20px auto;">
+        </fieldset>
+        <fieldset>        
+        <label for="name">Username:</label>
+        <input type="text" name="username" value="{{ username }}" required>
+    </fieldset>
+    <fieldset> 
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ name }}" required>
+    </fieldset>
+    <fieldset> 
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="{{ email }}" required>
+    </fieldset>
+    <fieldset> 
+        <label for="email">Phone:</label>
+        <input type="text" name="contactinfo" value="{{ contactinfo }}" required>
+    </fieldset>
+    <fieldset> 
+        <label for="email">gender:</label>
+        <input type="text" name="gender" value="{{ gender }}" required>
+    </fieldset>
+    <fieldset> 
+        <label for="email">age:</label>
+        <input type="text" name="age" value="{{ age }}" required>
+    </fieldset>
+    <fieldset> 
+        <button type="submit">Save Changes</button>
+    </fieldset>
+    </form>
+   </div>
+</main>
+
+<footer>
+    <div class="foot-cont">
+       <a href="/"> <img src="static/logo.jpeg" alt="EventAlchemy" width="200px"></a>
+        <div class="footer0">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/eventSchedule">Event Listings</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/testimonials">Customer Reviews</a></li>
+                <li><a href="/login">Log-in</a></li>
+            </ul>
+        </div>
+        <div class="footer1">
+            <h4>Address:</h4>
+            <p> 13th floor, Labyrinth Towers, Cornelia Street, 16th Avenue, Wonderland. Pin Code: 401989</p>
+        </div>
+        <div class="footer1">
+            <h4>FAQs</h4>
+            <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">How can i book for an event?</p>
+            <p>You can fill out our Contact form simply and our team will get back to you!</p> <br><br>
+            <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">What is the payment process like?</p>
+            <p>you will have to pay a booking advance amount to us before we proceed with the event plan!</p>
+        </div>
+    </div>
+    <div class="foot-cont2">
+        <div class="socials">
+            <p>Follow us on social media:</p>
+            <div class="socialimg">
+
+            <div class="twitter">
+            <img src="static/twitter.jpg" alt="twitter" title="twitter" onclick="twitter()" width="40px" height="40px">
+        </div>
+
+            <div class="instagram">
+            <img src="static/instagram2.jpg.jpeg" alt="instagram" title="instagram" onclick="instagram()"  width="40px" height="40px">
+        </div>
+            <div class="linkedin">
+            <img src="static/linkedin.jpg" alt="linked-in" title="linked-in" onclick="linkedin()" width="40px" height="40px">
+        </div>
+
+            <div class="facebook">
+            <img src="static/facebook.jpg" alt="Facebook" title="Facebook" onclick="facebook()" width="40px" height="40px" >
+        </div>
+            <div class="snapchat">
+            <img src="static/snapchat.jpeg" alt="snapchat" title="snapchat" onclick="snapchat()" width="40px" height="40px">
+        </div>
+        </div>
+        </div>
+    </div>
+    <div id="authorname">
+        <p> All rights reserved © EventAlchemy Inc. 2023. Designed by Trupti Bansode.</p>
+    </div>
+</footer>
+
+
+
+<script>
+
+    function twitter(){
+        window.location.href="https://twitter.com/"
+    }
+
+    function instagram(){
+        window.location.href="https://instagram.com/tobesotrupti?igshid=NzZlODBkYWE4Ng=="
+    }
+
+    function linkedin(){
+        window.location.href="https://www.linkedin.com/in/truptibansode"
+    }
+
+    function facebook(){
+        window.location.href="https://www.facebook.com/profile.php?id=100016222260085&mibextid=ZbWKwL"
+    }
+
+    function snapchat(){
+        window.location.href="https://www.snapchat.com/add/trupti1910?share_id=JIdkDfNkgK0&locale=en-US"
+    }
+
+    // Function to display a preview of the selected image
+    function previewImage() {
+        var fileInput = document.getElementById('fileInput');
+        var imagePreview = document.getElementById('imagePreview');
+
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+                // Initialize Cropper
+                var cropper = new Cropper(imagePreview, {
+                    aspectRatio: 1, // Adjust the aspect ratio as needed
+                    viewMode: 1,   // Set the view mode for cropping
+                });
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+
+    // Function to crop the image using OpenCV (called when the "Save Changes" button is clicked)
+    function cropImage() {
+        // Get the cropped image data (canvas.toDataURL() or Cropper.js methods)
+        var croppedImageData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
+        // Assign the cropped data to a hidden input field to be submitted with the form
+        var croppedInput = document.createElement('input');
+        croppedInput.type = 'hidden';
+        croppedInput.name = 'cropped_pfp';
+        croppedInput.value = croppedImageData;
+        document.querySelector('form').appendChild(croppedInput);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User Information</title>
+  <link rel="shortcut icon" href="/static/logo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/admin-editor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <button>
+      <a href="/admin"> <i class="fa-solid fa-arrow-left"></i> Go Back</a>
+    </button>
+  </header>
+
+  <main>
+    <div class="a-e-form-cont">
+      <form method="post" action="/update_user/{{ id }}" enctype="multipart/form-data">
+        <h1>Edit User details</h1>
+        <div class="form-1-sec">
+          <fieldset>
+            <label for="id">Customer ID</label>
+            <input type="text" name="id" id="id" value="{{ id }}" readonly>
+          </fieldset>
+          <fieldset>
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" value="{{ username }}">
+          </fieldset>
+          <fieldset>
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" value="{{ name }}" required>
+          </fieldset>
+        </div>
+        <div class="form-2-sec">
+          <fieldset>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" value="{{ email }}" required>
+          </fieldset>
+          <fieldset>
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" value="{{ age }}" required>
+          </fieldset>
+          <fieldset>
+            <label for="gender">gender</label>
+            <input type="text" name="gender" id="gender" value="{{ gender }}" required>
+          </fieldset>
+        </div>
+        <fieldset>
+          <label for="contactinfo">Phone </label>
+          <input type="tel" name="contactinfo" id="contactinfo" value="{{ contactinfo }}" maxlength="12" minlength="10"
+            required>
+        </fieldset>
+
+        <div id="ce-btn">
+          <button type="submit">Save Changes</button>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+
+  <footer style="margin:20px; padding-bottom: 30px;">
+    <h3 style="text-align: center; color: #85403b; font-family: 'marcellus', sans-serif; font-weight: lighter; font-size: 1.3em; letter-spacing: 1px;">
+        &copy; EventAlchemy Inc. Designed by Trupti Bansode</h3>
+</footer>
+
+
+
+</body>
+
+</html>

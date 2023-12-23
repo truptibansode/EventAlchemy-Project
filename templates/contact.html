@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <link rel="stylesheet" href="/static/css/mydesign.css">
+    <link rel="stylesheet" href="static/css/mystyle.css">
+    <link rel="stylesheet" href="static/css/contactpg.css">
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">    
+    <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <div class="logo">
+                    <a href="/"><img src="static/logo.jpeg" alt="logo-eventalchemy" height="60px" width="60px"></a>
+                </div>
+                <div class="menunav">
+    
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/eventSchedule">Event Listings</a></li>
+                        <li><a href="/service">Services</a></li>
+                        <li><a href="/testimonials">Customer Reviews</a></li>
+                        <!--<li><a href="/login">Log-in</a></li>-->
+                        <li><a href="/user-profile">My Profile</a></li>
+    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="contact-title">
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+    <main>
+        <div class="para">
+            <div class="para1">
+                <h1>About us</h1>
+                <p>At Event-Alchemy, we believe in the magic of turning ordinary moments into extraordinary memories. Our secret sauce lies in the fusion of art, innovation, and a touch of alchemy, as we craft events that defy expectations and break boundaries. We're not just event planners; we're dream-weavers, turning your aspirations into experiences that resonate long after the final curtain falls. Discover the alchemical transformation of your events with us, where every celebration is an opportunity to create pure, unforgettable magic.</p>
+            </div>
+            <div class="para1">
+                <h1>Our Vision</h1>
+                <p>
+                    Our vision at Event-Alchemy is to revolutionize the world of event management. We're on a mission to pioneer a new era of event planning, one that seamlessly integrates cutting-edge technology, eco-conscious practices, and the boundless creativity of our team. We envision a world where event sustainability is the standard, where diversity and inclusivity reign supreme, and where every event becomes a platform for change and celebration.</p>
+            </div>
+            <div class="para1">
+                <h1>Our Commitment</h1>
+                <p>At Event-Alchemy, we are not just event planners; we are dream architects. Our commitment to you is unwavering, driven by a passion to create unforgettable moments that transcend the ordinary. We strive to understand your unique vision, infuse it with our alchemical touch, and turn it into a reality that reflects your style, values, and aspirations. We believe that every event, whether grand or intimate, has the potential to be a masterpiece. </p>
+            </div>
+        </div>
+
+
+        {% if username %}
+        <div class="formmain">
+            <div class="separator">
+                <h1>&nbsp;  Contact Form&nbsp;  </h1>
+            </div>
+            <form action="/contact" method="post" enctype="multipart/form-data" class="form-enquiry">
+                <fieldset id="fieldset-inp">
+                <label for="Name">Full Name: <input class="input" type="text" name="Name" id="Name" placeholder="enter your name" required></label>
+                <label for="age">Age: <input class="input" type="number" name="age" id="age" placeholder="enter your age" required></label>
+                <label for="Phone">Phone No.: <input class="input" type="tel" name="Phone" id="Phone" maxlength="12" minlength="10" placeholder="enter phone number" required></label>
+            </fieldset>
+            <fieldset id="fieldset-inp">
+                <label for="eventdate"> Event Date: 
+                <input class="input" type="date" id="eventdate" name="eventdate"></label>
+                <label for="attendees">Number of attendees: <input class="input" type="number" id="attendees" name="attendees" placeholder="enter number of attendees" required> </label>
+                <label for="location">Preferred Location: <input class="input" type="text" id="location" name="location" required></label>
+            </fieldset>
+            <div class="rad-check">
+                <fieldset>
+                    <label>Type of Event: </label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="conference" required> Conference</label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="Dinner" required> Dinner/Reception</label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="Seminar" required> Seminar</label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="Exhibition" required> Exhibition</label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="Team Building" required> Team Building</label>
+                    <label><input type="radio" id="eventtype" name="typeofevent" value="accomodation" required> Accomodation</label>
+                </fieldset>
+                <fieldset>
+                <label>Type of Package: </label>
+                    <label><input type="radio" id="pkg-type" name="package" value="Premium" required> Premium</label>
+                    <label><input type="radio" id="pkg-type" name="package" value="Elite" required> Elite</label>
+                    <label><input type="radio" id="pkg-type" name="package" value="Super Elite" required> Super Elite</label>
+                </fieldset>
+            <fieldset>
+                <label>Event Management Requirement: </label>
+                <p class="subtext">Please select all the applies.</p>
+                <label><input type="checkbox" id="eventtype" name="eventtype value="Venreq" > Venue requirement</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="Invitations" >Invitations & Confirmation</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="exbhition-management" > Exhibition Managemnt</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="Entertainment" > Entertainment</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="theme-dressing" > Theming/Room Dressing</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="AVproduction" > AV production and stage set-up</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="printed-materials" > Printed Materials</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="full-onsite-management" >Full On-Site Management</label>
+                <label><input type="checkbox" id="eventtype" name="eventtype" value="catering" > Catering/Food Arrangement</label>
+            </fieldset>
+        </div>
+            <fieldset id="fieldset-inp">
+                <label for="message">Message:</label><textarea rows="5" cols="50" id="message" name="message" required></textarea>
+            </fieldset>
+            <div class="btn-subclass">
+                <input id="btn-sub" type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
+        {% else %}
+        <section id="pricing">
+            <div class="pricingh3">
+            <h3>Flexible Plans & Pricings</h3>
+            <p>Our customizable packages cater to your unique needs, ensuring cost-effective solutions that align with your event goals.</p>
+            </div>
+            <div class="sec3divmain">
+            <div class="sec3">
+                <div class="sub3-1">
+                    <h3>Premium</h3>
+                    <img src="/static/favourites.png" alt="Premium Package" class="pkg" width="30%">
+                    <h2><sup>₹</sup>&nbsp;20,000</h2>
+                    <ul>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Description:</span>includes premium privileges and extensive suite of features.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Suitable for mid-sized events.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Responsive customer support.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Pricing: </span> ₹2,000 per month or ₹20,000 for a one-time payment.</li>
+                    </ul>
+                    <br><br>
+                    <div class="btn-book">
+                        <button type="submit"><a href="/login" title="login to contact us">Book <i class="fa-solid fa-right-to-bracket"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sec3">
+                <div class="sub3-1" >
+                    <h3> Elite</h3>
+                    <img src="/static/twostars.png" alt="Elite Package" class="pkg" width="30%">
+                    <h2><sup>₹</sup>&nbsp;30,000</h2>
+                    <ul>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Description:</span>includes advanced features, Elite support, and customization</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Access to exclusive features.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Advanced features for large events.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Pricing: </span> ₹3,000 per month or ₹30,000 for a one-time payment.</li>
+                    </ul>
+                    <br><br>
+                    <div class="btn-book">
+                        <button type="submit"><a href="/login" title="login to contact us">Book <i class="fa-solid fa-right-to-bracket"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sec3">
+                <div class="sub3-1">
+                    <h3>Super Elite</h3>
+                    <img src="/static/threestars.png" alt="Super Elite Package" class="pkg" width="30%">
+                    <h2><sup>₹</sup>&nbsp;50,000</h2>
+                    <ul>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Description:</span>customized event management services.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Pricing depends on event requirements.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> Fully personalized support.</li>
+                        <li><img src="/static/check-circle.png" width="20px" height="20px" style="margin-bottom: -5px;"> <span class="bold">Pricing: </span> 50,000 Base price. Extra charge depends on the event.</li>
+                    </ul>
+                    <br><br>
+                    <div class="btn-book">
+                        <button type="submit"><a href="/login" title="login to contact us">Book <i class="fa-solid fa-right-to-bracket"></i></a></button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <div class="foot-cont">
+           <a href="/"> <img src="static/logo.jpeg" alt="EventAlchemy" width="200px"></a>
+            <div class="footer0">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/eventSchedule">Event Listings</a></li>
+                    <li><a href="/service">Services</a></li>
+                    <li><a href="/testimonials">Customer Reviews</a></li>
+                    <li><a href="/login">Log-in</a></li>
+                </ul>
+            </div>
+            <div class="footer1">
+                <h4>Address:</h4>
+                <p> 13th floor, Labyrinth Towers, Cornelia Street, 16th Avenue, Wonderland. Pin Code: 401989</p>
+            </div>
+            <div class="footer1">
+                <h4>FAQs</h4>
+                <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">How can i book for an event?</p>
+                <p>You can fill out our Contact form simply and our team will get back to you!</p> <br><br>
+                <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">What is the payment process like?</p>
+                <p>you will have to pay a booking advance amount to us before we proceed with the event plan!</p>
+            </div>
+        </div>
+        <div class="foot-cont2">
+            <div class="socials">
+                <p>Follow us on social media:</p>
+                <div class="socialimg">
+    
+                <div class="twitter">
+                <img src="static/twitter.jpg" alt="twitter" title="twitter" onclick="twitter()" width="40px" height="40px">
+            </div>
+    
+                <div class="instagram">
+                <img src="static/instagram2.jpg.jpeg" alt="instagram" title="instagram" onclick="instagram()"  width="40px" height="40px">
+            </div>
+                <div class="linkedin">
+                <img src="static/linkedin.jpg" alt="linked-in" title="linked-in" onclick="linkedin()" width="40px" height="40px">
+            </div>
+    
+                <div class="facebook">
+                <img src="static/facebook.jpg" alt="Facebook" title="Facebook" onclick="facebook()" width="40px" height="40px" >
+            </div>
+                <div class="snapchat">
+                <img src="static/snapchat.jpeg" alt="snapchat" title="snapchat" onclick="snapchat()" width="40px" height="40px">
+            </div>
+            </div>
+            </div>
+        </div>
+        <div id="authorname">
+            <p> All rights reserved © EventAlchemy Inc. 2023. Designed by Trupti Bansode.</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script>
+    
+        function twitter(){
+            window.location.href="https://twitter.com/"
+        }
+    
+        function instagram(){
+            window.location.href="https://instagram.com/tobesotrupti?igshid=NzZlODBkYWE4Ng=="
+        }
+    
+        function linkedin(){
+            window.location.href="https://www.linkedin.com/in/truptibansode"
+        }
+    
+        function facebook(){
+            window.location.href="https://www.facebook.com/profile.php?id=100016222260085&mibextid=ZbWKwL"
+        }
+    
+        function snapchat(){
+            window.location.href="https://www.snapchat.com/add/trupti1910?share_id=JIdkDfNkgK0&locale=en-US"
+        }
+
+       
+    var currentPageURL = window.location.pathname;
+
+    // Get all the <a> elements within the navigation menu
+    var menuLinks = document.querySelectorAll(".menunav a");
+
+    // Loop through the <a> elements and add the 'active' class to the corresponding <li>
+    for (var i = 0; i < menuLinks.length; i++) {
+        var link = menuLinks[i];
+        if (link.getAttribute("href") === currentPageURL) {
+            link.parentNode.classList.add("active");
+            break; // Stop looping after the first match is found
+        }
+    }
+
+    
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const phoneInput = document.getElementById("Phone");
+      
+          phoneInput.addEventListener("input", function () {
+            // Remove any non-digit characters from the input value
+            const phoneNumber = this.value.replace(/\D/g, "");
+      
+            // Check if the phone number has at least 10 digits
+            if (phoneNumber.length < 10) {
+              this.setCustomValidity("Phone number must be at least 10 digits.");
+            } else {
+              this.setCustomValidity("");
+            }
+          });
+        });
+      </script>
+      
+</body>
+</html>

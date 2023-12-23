@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-Alchemy: make your dream celebrations come true.</title>
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body id="homebody">
+    <header>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="/"><img src="static/logo.jpeg" alt="logo-eventalchemy" height="60px" width="60px"></a>
+            </div>
+            <div class="menunav">
+                <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+                <ul>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/eventSchedule">Event Listings</a></li>
+                    <li><a href="/service">Services</a></li>
+                    <li><a href="/testimonials">Customer Reviews</a></li>
+                    <li><a href="/user-profile">My Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="landingtitle-container">
+        <h1 class="heading1">Event-Alchemy</h1>
+        <div class="separator">
+            <p class="text">Design &#128629 planning</p>
+        </div>
+        {% if username %}
+        <a href="/service"><button type="submit">Check Pricing</button></a>
+        {% else %}
+        <a href="/contact"><button type="submit">Check Pricing</button></a> 
+        <a href="/login"><button type="submit">Log In</button></a>
+        {% endif %}
+    </div>
+</header>
+    <main>
+    <div class="container">
+
+        
+        <div class="firstcon">
+
+            {% if username %}
+                <h2>Welcome, {{ username }}!!</h2>
+
+            {% else %}
+            <h4>CREATING MEMORABLE MOMENTS TAILORED TO THE CLIENT.</h4>
+            <p class="textbody">Based in Mumbai, EventAlchemy designs and delivers special occassions to meet the client
+                expections and interests. From large branded events to celebration of private weddings and everything in
+                between, we at EventAlchemy work efficiently to make your big day memorable and deliver you an
+                experience that is unforgettable.</p>
+             
+                {%endif %}
+        </div>
+        <div class="sec-con">
+            <h3 class="title">Our Services</h3>
+            <div class="sub-sec-con">
+                <div class="ser1">
+                    <img src="static/birthday-celebration.jpg" alt="birthday" width="100%" height="270px">
+                    <h5>Birthdays</h5>
+                    <p class="textcon">Unlock the magic of life's milestones with our extraordinary birthday events. Create cherished memories filled with laughter, love, and unforgettable moments. Celebrate with us!</p>
+                    <div class="btn-style">
+                        {% if username %}
+                        <button type="submit"><a href="/contact">Book now</a></button>
+                        <button type="submit"><a href="/service">pricing</a></button>
+                        {%else%}
+                        <button type="submit"><a href="/contact">Check Pricing</a></button>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="ser1">
+                    <img src="static/Reception.jpg" alt="birthday" width="100%" height="270px">
+                    <h5>Receptions</h5>
+                    <p class="textcon">Elevate your event with our reception management services. From seamless guest arrivals to expert coordination, we ensure a welcoming and polished experience for all attendees. Trust us for success.</p>
+                        <div class="btn-style">{% if username %}
+                            <button type="submit"><a href="/contact">Book now</a></button>
+                            <button type="submit"><a href="/service">pricing</a></button>
+                            {%else%}
+                            <button type="submit"><a href="/contact">Check Pricing</a></button>
+                            {% endif %}
+                        </div>
+                </div>
+                <div class="ser1">
+                    <img src="static/partycel.jpeg" alt="birthday" width="100%" height="270px">
+                    <h5>Parties</h5>
+                    <p class="textcon">Elevate your celebrations with our expert party managing services. From planning to execution, we turn your vision into unforgettable moments, leaving you free to enjoy the party.</p>
+                        <div class="btn-style">{% if username %}
+                            <button type="submit"><a href="/contact">Book now</a></button>
+                            <button type="submit"><a href="/service">pricing</a></button>
+                            {%else%}
+                            <button type="submit"><a href="/contact">Check Pricing</a></button>
+                            {% endif %}
+                        </div>
+                </div>
+            </div>
+            <div class="sub-sec-con">
+                <div class="ser1">
+                    <img src="static/flowerdecor.jpg" alt="birthday" width="100%" height="270px">
+                    <h5>Outdoor events</h5>
+                    <p class="textcon">Transform open spaces into unforgettable experiences. Our outdoor event management combines creativity and logistics to craft memorable gatherings, blending nature's beauty with your vision. Your dream event, outdoors.</p>
+                        <div class="btn-style">{% if username %}
+                            <button type="submit"><a href="/contact">Book now</a></button>
+                            <button type="submit"><a href="/service">pricing</a></button>
+                            {%else%}
+                            <button type="submit"><a href="/contact">Check Pricing</a></button>
+                            {% endif %}
+                        </div>
+                </div>
+                <div class="ser1">
+                    <img src="static/arch.jpg" alt="birthday" width="100%" height="270px">
+                    <h5>weddings</h5>
+                    <p class="textcon">Experience the wedding of your dreams with our comprehensive wedding management services. From meticulous planning to flawless execution, we create your perfect day, filled with love and cherished memories.</p>
+                        <div class="btn-style">{% if username %}
+                            <button type="submit"><a href="/contact">Book now</a></button>
+                            <button type="submit"><a href="/service">pricing</a></button>
+                            {%else%}
+                            <button type="submit"><a href="/contact">Check Pricing</a></button>
+                            {% endif %}
+                        </div>
+                </div>
+                <div class="ser1">
+                    <img src="static/award-night.jpg" alt="birthday" width="100%" height="270px">
+                    <h5>office events</h5>
+                    <p class="textcon">Elevate your office events with our management expertise. We specialize in creating engaging and productive gatherings, from corporate meetings to team-building activities. Let us make your events exceptional.</p>
+                        <div class="btn-style">{% if username %}
+                            <button type="submit"><a href="/contact">Book now</a></button>
+                            <button type="submit"><a href="/service">pricing</a></button>
+                            {%else%}
+                            <button type="submit"><a href="/contact">Check Pricing</a></button>
+                            {% endif %}
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-con">
+            <div class="sub1">
+                <h3>Who are we?</h3>
+                <p>We are Event-Alchemy, specialized in transforming your event dreams into reality! We're not your
+                    typical event planners; we're your partners in crafting unforgettable experiences. Whether you're
+                    envisioning a music festival, an intimate gathering with friends, or a virtual extravaganza, we've
+                    got you covered. Our approach combines creativity, sustainability, and cutting-edge technology to
+                    create events that make a lasting impact. Join us as we redefine event management for the digital
+                    age. Let's work together to turn your dreams into extraordinary realities, one event at a time!</p>
+            </div>
+            <div class="sub2">
+                <img src="static/arch1.jpg" alt="" width="500px" height="600px"
+                style="outline: 1px solid #614111; outline-offset: 20px;">
+            </div>
+        </div>
+        <div class="four-con">
+            <h3>Happy Customers of Event-Alchemy</h3>
+            <div class="ser2">
+                <div class="subser2">
+                    <img src="static/bride.jpeg" alt="bride" width="100%">
+                    <p class="textimg">Carla's beautiful wedding shoot!</p>
+                </div>
+                <div class="subser2">
+                    <img src="static/eng-cel-flatlay2.jpg" alt="bride" width="100%">
+                    <p class="textimg">Priya and Amit's engagement ceremony!</p>
+                </div>
+                <div class="subser2">
+                    <img src="static/pexels-helena-jankovičová-kováčová-15278442.jpg" alt="bride" width="100%">
+                    <p class="textimg">Taylor and Travis's wedding.</p>
+                </div>
+            </div>
+            <div class="ser2">
+                <div class="subser2">
+                    <img src="static/birthday-celebration.jpg" alt="bride" width="100%">
+                    <p class="textimg">Kiara's birthday celebration was 'a beautiful event to remember', as she
+                        describes!</p>
+                </div>
+                <div class="subser2">
+                    <img src="static/partycel.jpg" alt="bride" width="100%">
+                    <p class="textimg">Sophie's birthday party!</p>
+                </div>
+            </div>
+        </div>
+        <div class="five-con">
+            <div class="ser3">
+                <h3>Read what our customers have to say about our event planning!</h3>
+                <button type="submit">
+                    <a href="/testimonials">Read Reviews <i class="fa-solid fa-right-from-bracket"></i></a>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<footer>
+    <div class="foot-cont">
+       <a href="/"> <img src="static/logo.jpeg" alt="EventAlchemy" width="200px"></a>
+        <div class="footer0">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/eventSchedule">Event Listings</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/testimonials">Customer Reviews</a></li>
+                <li><a href="/login">Log-in</a></li>
+            </ul>
+        </div>
+        <div class="footer1">
+            <h4>Address:</h4>
+            <p> 13th floor, Labyrinth Towers, Cornelia Street, 16th Avenue, Wonderland. Pin Code: 401989</p>
+        </div>
+        <div class="footer1">
+            <h4>FAQs</h4>
+            <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">How can i book for an event?</p>
+            <p>You can fill out our Contact form simply and our team will get back to you!</p> <br><br>
+            <p style="font-size: 16px; color:#fff; letter-spacing: normal; margin: 5px 0;">What is the payment process like?</p>
+            <p>you will have to pay a booking advance amount to us before we proceed with the event plan!</p>
+        </div>
+    </div>
+    <div class="foot-cont2">
+        <div class="socials">
+            <p>Follow us on social media:</p>
+            <div class="socialimg">
+
+            <div class="twitter">
+            <img src="static/twitter.jpg" alt="twitter" title="twitter" onclick="twitter()" width="40px" height="40px">
+        </div>
+
+            <div class="instagram">
+            <img src="static/instagram2.jpg.jpeg" alt="instagram" title="instagram" onclick="instagram()"  width="40px" height="40px">
+        </div>
+            <div class="linkedin">
+            <img src="static/linkedin.jpg" alt="linked-in" title="linked-in" onclick="linkedin()" width="40px" height="40px">
+        </div>
+
+            <div class="facebook">
+            <img src="static/facebook.jpg" alt="Facebook" title="Facebook" onclick="facebook()" width="40px" height="40px" >
+        </div>
+            <div class="snapchat">
+            <img src="static/snapchat.jpeg" alt="snapchat" title="snapchat" onclick="snapchat()" width="40px" height="40px">
+        </div>
+        </div>
+        </div>
+    </div>
+    <div id="authorname">
+        <p> All rights reserved © EventAlchemy Inc. 2023. Designed by Trupti Bansode.</p>
+    </div>
+</footer>
+
+
+
+<script>
+
+    function twitter(){
+        window.location.href="https://twitter.com/"
+    }
+
+    function instagram(){
+        window.location.href="https://instagram.com/tobesotrupti?igshid=NzZlODBkYWE4Ng=="
+    }
+
+    function linkedin(){
+        window.location.href="https://www.linkedin.com/in/truptibansode"
+    }
+
+    function facebook(){
+        window.location.href="https://www.facebook.com/profile.php?id=100016222260085&mibextid=ZbWKwL"
+    }
+
+    function snapchat(){
+        window.location.href="https://www.snapchat.com/add/trupti1910?share_id=JIdkDfNkgK0&locale=en-US"
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuList = document.querySelector('.menunav ul');
+
+    menuToggle.addEventListener('click', function () {
+        menuList.classList.toggle('show');
+    });
+});
+
+
+</script>
+
+
+<script>
+    var currentPageURL = window.location.pathname;
+
+    // Get all the <a> elements within the navigation menu
+    var menuLinks = document.querySelectorAll(".menunav a");
+
+    // Loop through the <a> elements and add the 'active' class to the corresponding <li>
+    for (var i = 0; i < menuLinks.length; i++) {
+        var link = menuLinks[i];
+        if (link.getAttribute("href") === currentPageURL) {
+            link.parentNode.classList.add("active");
+            break; // Stop looping after the first match is found
+        }
+    }
+</script>
+</body>
+
+</html>

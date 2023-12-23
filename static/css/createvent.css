@@ -1,0 +1,147 @@
+body{
+    margin: auto;
+    background-color: #f7f4f1;
+    color: #85403b;
+}
+
+
+
+.ce-container{
+    padding: 20px 0 170px;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f4f1;
+}
+
+.ce-form{
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px 70px;
+    background-color: #f7f4f1;
+    border-radius: 70px;
+    box-shadow: 1px 1px 20px #aaa;
+}
+
+.ce-form h1{
+    text-align: center;
+    padding: 50px;
+    padding-top: 10px;
+    font-family: 'calibri',serif;
+    font-weight: lighter;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-size: 3em;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border: none;
+}
+
+label{
+    width: 100%;
+    font-size: 1em;
+    margin: 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+
+
+#ce-1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#ce-3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: 146px;
+}
+
+input{
+    border: 1px solid #a58e74;
+    height: 30px;
+    margin: 15px 0;
+    padding: 0 10px;
+    background: transparent;
+    border-radius: 20px;
+    width: 105%;
+    font-family: 'calibri',serif;
+    font-size: 1.1em;
+}
+
+#ce-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+::placeholder{
+    text-align: center;
+}
+
+
+::selection{
+    background-color: #85403b;
+    color: #f7f4f1;
+}
+
+
+#ce-btn{
+    display: flex;
+    width: 30%;
+    margin: 30px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#ce-btn button{
+    text-align: center;
+    border: none;
+    background-color: #85403b;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #f7f4f1;
+    font-family: 'calibri',serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+button:hover{
+    box-shadow: 1px 1px 10px #aaa;    
+}
+
+@media (max-width:800px){
+    #ce-1, #ce-2{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    label, input{
+        margin: 0;
+        width: 100%;
+    }
+
+    #ce-btn{
+        width: 100%;
+    }
+
+    
+}

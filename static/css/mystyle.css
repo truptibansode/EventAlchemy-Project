@@ -1,0 +1,349 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4eeed;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+.container h1{
+    text-align: center;
+    font-family:'calibri', serif;
+    color:#614111;
+    font-size: 70px;
+    width: 60%;
+    margin: 200px auto;
+    padding: 10px;
+    border: 1px solid #313131;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    
+}
+
+
+#circles1{
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+#verticalline{
+    width: 2px;
+    height: 100vh;
+    background-color: silver;
+    float: left;
+    margin-left: 30px;
+    margin-top: 700px;
+    position: absolute;
+}
+
+#paraevent{
+    text-align: center;
+    font-family:'calibri', cursive;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: #313131;
+}
+.event1{
+    margin-top: 150px;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color:#F2AAAE;
+}
+.mainevents1{
+    margin: 45px auto auto 60px;
+}
+.cal1{
+    margin: 0px 10px 10px 10px;
+    padding: 7px;
+    border-radius: 50px;
+    width: auto;
+    height: 50px;
+    background-color: #F2AAAE;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal1 h5{
+    font-family:  'calibri', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #F2AAAE;
+    border-radius: 50px;
+    text-align: left;
+    padding: 12px 0px 0px 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.event-one{
+    position: relative;
+    display: flex;
+}
+
+.event-one img{
+    margin: 20px;
+    border-radius: 20%;
+}
+.texts{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    padding: 50px;
+    margin-left: 5px;
+    text-align: left;
+    color:#585757;
+}
+#circles2{
+    align-items: left;
+    justify-content: left;
+    display: flex;
+    margin: 20px auto;
+}
+
+#verticalline1{
+    width: 2px;
+    height: 100vh;
+    background-color: silver;
+    float: left;
+    margin-left: 30px;
+    position: absolute;
+}
+.event2{
+    margin: auto;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #D0AAd1;
+}
+
+.cal2{
+    margin: -5px 10px 2px 75px;
+    padding: 7px;
+    border-radius: 50px;
+    width: 100%;
+    height: 50px;
+    background-color: #D0AAd1;
+    align-items: left;
+    justify-content: left;
+}
+
+.cal2 h5{
+    font-family:  'calibri', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color:  #D0AAd1;
+    border-radius: 50px;
+    text-align: left;
+    padding: 12px 0px 0px 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+#circles3{
+    align-items: left;
+    justify-content: left;
+    display: relative;
+    margin-top: -10px;
+}
+
+#verticalline2{
+    width: 2px;
+    height: 100vh;
+    background-color: silver;
+    float: left;
+    margin-left: 30px;
+    position: absolute;
+}
+.event3{
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #ffe7c1;
+}
+
+.cal3{
+    margin: 5px 10px 10px 70px;
+    padding: 7px;
+    border-radius: 50px;
+    width: auto;
+    height: 50px;
+    background-color: #ffe7c1;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal3 h5{
+    font-family:  'calibri', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(180, 172, 172);
+    background-color:  #ffe7c1;
+    border-radius: 50px;
+    text-align: left;
+    padding: 12px 0px 0px 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.event-three img{
+    float:left;
+    margin: 30px 20px auto 70px;
+    border-radius: 20%;
+}
+.decor{
+    font-style: italic;
+    font-family: 'Lobster two', cursive;
+    font-size: 1em;
+}
+
+#circles4{
+    align-items: left;
+    justify-content: left;
+    display: relative;
+    margin-top: -10px;
+}
+
+#verticalline3{
+    width: 2px;
+    height: 100vh;
+    background-color: silver;
+    float: left;
+    margin-left: 30px;
+    position: absolute;
+}
+.event4{
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #b6c4a0;
+}
+
+.cal4{
+    margin: 5px 10px 10px 70px;
+    padding: 7px;
+    border-radius: 50px;
+    width: auto;
+    height: 50px;
+    background-color: #b6c4a0;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal4 h5{
+    font-family:  'calibri', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color:  #b6c4a0;
+    border-radius: 50px;
+    text-align: left;
+    padding: 12px 0px 0px 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+#circles5{
+    align-items: left;
+    justify-content: left;
+    display: flex;
+    margin: 20px auto;
+}
+
+#verticalline4{
+    width: 2px;
+    height: 100vh;
+    background-color: silver;
+    float: left;
+    margin-left: 30px;
+    position: absolute;
+}
+.event5{
+    margin: auto;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #D0B0b4;
+}
+
+.cal5{
+    margin: -5px 10px 2px 75px;
+    padding: 7px;
+    border-radius: 50px;
+    width: 100%;
+    height: 50px;
+    background-color: #D0B0b4;
+    align-items: left;
+    justify-content: left;
+}
+
+.cal5 h5{
+    font-family:  'calibri', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color:  #D0B0b4;
+    border-radius: 50px;
+    text-align: left;
+    padding: 12px 0px 0px 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.endpara1{
+    font-size: 20px;
+    font-family: 'calibri', sans-serif;
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    width: 60%;
+    margin: 50px auto;
+    color: rgb(77, 77, 77);
+}
+.endpara1 p{
+    font-weight: 100;
+}
+
+
+.btn-reg{
+    border: none;
+    background-color: #5d573f;
+    padding: 15px 20px;
+    margin: auto;
+    font-family: 'calibri',serif;
+    color: #f3e7d4;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+}

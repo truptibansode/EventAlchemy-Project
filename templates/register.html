@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/mydesign.css">
+    <link rel="stylesheet" href="static/css/loginpage.css">
+    <title>USER REGISTERATION</title>
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+    <script src="static/login.js"></script>
+</head>
+<body class="registerbody" >
+    <!--style="background-image: url(static/newbg_upscaled.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;"-->
+
+    
+
+    <div class="container">
+
+        <div class="top-flower">
+            <img src="static/flower-top.png" width="360px" height="300px" class="top-flower-img" style="position: absolute;left: 240px; top: -70px; z-index: -2;">
+        </div>
+        <div class="flower-bottom" style="display: grid;">
+            <img src="static/flower-bottom.png" width="300px" height="300px" class="top-flower-img" style="position: absolute;left: 830px; top: 580px; z-index: -2;">
+        </div>
+        <div class="flower-bottom" style="display: grid;">
+            <img src="static/flower-top.png" width="380px" height="290px" class="top-flower-img" style="position: absolute;left: 800px; top: 80px; z-index: -2;">
+        </div>
+        <div class="flower-bottom" style="display: grid;">
+            <img src="static/flower-bottom1.png" width="350px" height="300px" class="top-flower-img" style="position: absolute;left: 180px; top: 330px; z-index: -2;">
+        </div>
+        
+        <div class="form-box">
+            <h1 id="reg-title">REGISTER</h1>
+            <form action="/register" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <div class="input-field" id="nameField"> 
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Type your full name." name="name" required>
+                    </div>
+                    
+                    <div class="input-field" id="phoneField">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" placeholder="Enter your phonenumber"  name="contactinfo" maxlength="10" required>
+                    </div>
+                    <div class="input-field" id="emailField">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Enter your email address." name="email" required>
+                    </div>
+                     <div class="input-field" style="color: #555;">
+                        <i class="fa-solid fa-person" style="color: black;"></i>   
+                       <label for="gender" style="margin: 5px; padding-left: 8px; font-size: 13px; opacity: .8">GENDER:</label>
+                        <input type="radio" name="gender" required value="F" required>&nbsp;Female&nbsp;
+                        <input type="radio" name="gender" required value="M" required>&nbsp;Male&nbsp;
+                        <input type="radio" name="gender" required value="O" required>&nbsp;Other&nbsp;
+                        </div>
+                    <div class="input-field">
+                        <i class="fa-regular fa-address-book"></i>
+                        <input type="number" placeholder="Enter your age" name="Age" min="13" required>
+                    </div>
+
+                    <div class="input-field" style="height: 35px; align-items: center;">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <label for="pfp" style="display: inline; width: 40%; margin-left: 5px; color: #555; font-size: 14px; opacity: .8;">profile picture:</label>
+                        <input style="margin-top: -8px;" type="file" name="pfp" id="pfp">
+                        
+                    </div>
+                    
+                    <div class="input-field">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="text" name="username" value="{{ username }}" placeholder="Enter username." id="username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-eye"></i>
+                        <input type="password" placeholder="Enter password" id="password" maxlength="8" name="password" required>
+                    </div>
+                <br>
+                <br><br>
+                <div class="btn-feild" style="margin-top: -50px;">
+                    <button type="submit" name="save" id="register-btn" onclick="registerauth()">REGISTER</button>
+                   
+                </div>
+            <br><br>
+               <p>Already have an account? <a href="/login">Click here to log in!</a></p>
+                <br>
+   
+            </form>
+            
+        
+        </div>
+    </div>
+
+    <!--<script>
+        let registerBtn = document.getElementById("register-btn");
+        let loginBtn = document.getElementById("login-btn");
+        let toggleHide= document.getElementById("hidetoggle");
+        let regtitle = document.getElementById("reg-title");
+        function registerauth(){
+            toggleHide.style.maxHeight='350px';
+            regtitle.innerHTML= "REGISTER"
+            registerBtn.classList.remove("disable");
+            loginBtn.classList.add("disable");
+        }
+    </script>-->
+</body>
+</html>

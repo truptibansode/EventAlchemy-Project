@@ -1,0 +1,301 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #f3f3e7;
+}
+
+header{
+    margin: 0;
+    margin-top: -5px;
+    width: 100%;
+    height: 70px;
+    background-color: #dac9be;
+}
+
+.menu-icon {
+    display: none; /* Hide the menu icon by default */
+    cursor: pointer;
+    font-size: 24px;
+    padding: 25px 10px;
+}
+
+
+.leftnav{
+    position: relative;
+    float: left;
+}
+
+nav{
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    margin: 5px 10px;
+    padding: 25px;
+}
+
+li{
+    margin: 0 15px;
+    font-size: 1em;
+}
+
+
+nav > ul > li > a{
+    color:#614111;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+.rightnav{
+    position: relative;
+    float: right;
+}
+
+.rightnav > form{
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    padding: 20px;
+    padding-top: 25px;
+    margin-right: 40px;
+}
+
+.rightnav  > form > label{
+    margin: 0 5px;
+    font-size: 1.1em;
+}
+
+.rightnav > form > input{
+    border: none;
+    background-color: #dac9be;
+    color: #614111; 
+    height: 30px;
+    width: 30%;
+    border-bottom: 2px solid #614111;
+}
+
+::placeholder{
+    padding: 0 20px;
+    color: #614111;
+    opacity: .5;
+    font-size: 1.2em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+
+
+
+/* Hide rows that do not match the search criteria */
+table tbody tr.hidden {
+    display: none;
+}
+
+/* Style for highlighted rows */
+table tbody tr.highlighted {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+
+
+.rightnav>form>#btn-lo{
+    margin: 0 55px;
+    background-color: #a58e74;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #a58e74;
+}
+
+
+.rightnav>form>#btn-lo>a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #f3f3e7;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,serif;
+}
+
+
+/* Main CSS */
+
+main{
+    margin: 30px 0;
+    box-sizing: border-box;
+}
+
+.u-e-intro{
+    margin: 40px 10px;
+}
+
+.u-e-intro p{
+    color: #614111;
+    opacity: .7;
+    margin-left: 100px;
+    text-align: left;
+    font-size: 2em;
+    padding: 10px 0;
+    font-family: Arial, Helvetica, sans-serif,serif;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.top-cont{
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+
+.h-admin{
+    width: 25%;
+    margin: 30px 40px auto 100px;
+}
+
+.h-admin> h3{
+    color: #614111;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    background-color: #f3f3e7;
+    box-shadow: 1px 1px 5px #7a7878;
+}
+
+.v-c-cont{
+    width: 25%;
+    margin: 30px 10px auto;
+}
+
+.v-c-cont > h3{
+    color: #614111;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    background-color: #f3f3e7;
+    box-shadow: 1px 1px 5px #7a7878;
+}
+
+.dash-con-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dash-con-1> table{
+    width: 90%;
+    margin: 50px auto;
+    padding: -5px 20px 20px;
+    background-color: #f3f3e7;
+    box-shadow: 1px 1px 5px #7a7878;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.dash-con-1 > table > thead{
+    background-color: #a58e74;
+}
+
+thead > tr > th{
+    padding: 30px ; /* Add space around the content inside th */
+    text-align: center;
+    color: #f3f3e7;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,serif;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: .8em;
+    line-height: 2;
+}
+
+th:first-child{
+    border-top-left-radius: 10px;
+}
+th:last-child{
+    border-top-right-radius: 10px;
+}
+
+
+.dash-con-1 table tbody td {
+    padding: 20px 5px; 
+    text-align: center;
+    border: 1px solid #a58e74;
+    color: #614111;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1em;
+    line-height: 2;
+}
+
+
+td > a{
+    padding: 20px 0; /* Apply padding to table cells (td) */
+    text-align: center;
+    color: #614111;
+    font-size: 1em;
+    line-height: 2;
+}
+
+
+
+@media (max-width:650px){
+    body{
+        overflow-x: visible;
+    }
+}
+
+
+@media (max-width: 650px) {
+   .menu-icon{
+        display: block;
+    }
+
+    .leftnav {
+        display: none;
+    }
+    
+    .rightnav { 
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+    nav{
+        background-color: #dac9be;
+        height: 200px;
+    }
+
+    ul {
+        display: block; /* Change the list to a block for stacking vertically */
+        padding: 0;
+        float: left;
+    }
+
+    li {
+        margin: 25px 0; /* Add vertical spacing between list items */
+    }
+}
+
+

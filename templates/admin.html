@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Desk</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bonheur+Royale&family=Comic+Neue:wght@700&family=Cookie&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=IM+Fell+DW+Pica:ital@0;1&family=Italiana&family=Karla:wght@200&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Limelight&family=Lobster&family=Lobster+Two&family=Marcellus&family=Merriweather:wght@300&family=Pacifico&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,500&family=Quintessential&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Tangerine&family=WindSong&family=Work+Sans:wght@500&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/226d183df1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="static/logo.jpeg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="leftnav" id="menu">
+            <nav>
+                <img src="/static/logo.jpeg" class="logo" alt="Dashborad" title="Dashboard" width="60px" height="60px"
+                    style="border-radius: 50%; padding: 7px 0; margin-left: 30px;">
+                <ul>
+                    <li><a href="/admin" title="Home"><i class="fa-solid fa-house-user"></i>&nbsp;Dashboard</a></li>
+                    <li><a href="/user-contact-info" title="Contact Form Info"><i
+                                class="fa-solid fa-id-card"></i>&nbsp;User Inquiry</a></li>
+                    <li><a href="/event-created-admin" title="Event Created By User List"><i
+                                class="fa-solid fa-calendar-days"></i>&nbsp;Created Events</a></li>
+                    <li><a href="/events-approval" title="Pending Events"><i
+                                class="fa-solid fa-users"></i>&nbsp;Approval Panel</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="rightnav">
+            <form action="/search" method="GET" id="search-form">
+                <input type="search"name="q" id="search-input" placeholder="Search" onkeyup="searchAndHighlight()">
+                <label for="search-input"><i class="fa-solid fa-magnifying-glass"></i></label>
+                
+                <button id="btn-lo">
+                    <a href="/admin-logout">Log out</a>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="message {{ message.category }}">{{ message.message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="u-e-intro">
+            <p>Welcome, Admin!!</p>
+        </div>
+
+        <div class="top-cont">
+            <div class="h-admin">
+                <h3>User Log-In Info</h3>
+            </div>
+            <div id="visit-count-container" class="v-c-cont">
+                <h3>Visits on the website Count: <span id="visit-count"> {{visit_count}} </span></h3>
+            </div>
+        </div>
+        <div class="dash-con-1">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact Info</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+
+
+                    <tr>
+                        <td>{{ user[0] }}</td> 
+                        <td>{{ user[1] }}</td> 
+                        <td>{{ user[2] }}</td> 
+                        <td>{{ user[3] }}</td>
+                        <td>{{ user[4] }}</td> 
+                        <td>{{ user[5] }}</td> 
+                        <td>{{ user[6] }}</td>
+                        <td>
+                            <a class="delete-user" data-id="{{ user[0] }}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                            <a href="/update_user/{{ user[0] }}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+
+<footer style="margin: 50px; padding-bottom: 30px;">
+    <h3 style="text-align: center; color: #a58e74; font-family: 'marcellus', sans-serif; font-weight: lighter; font-size: 1.3em; letter-spacing: 2px;">
+        &copy; EventAlchemy Inc. Designed by Trupti Bansode</h3>
+</footer>
+
+
+    <script>
+
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+
+
+        function searchAndHighlight() {
+    var input = document.getElementById("search-input");
+    var filter = input.value.toLowerCase();
+    var table = document.querySelector("table");
+    var rows = table.querySelectorAll("tbody tr");
+
+    rows.forEach(function (row) {
+        var cells = row.getElementsByTagName("td");
+        var rowText = "";
+        for (var i = 0; i < cells.length; i++) {
+            rowText += cells[i].textContent.toLowerCase() + " ";
+        }
+
+        if (rowText.includes(filter)) {
+            row.classList.remove("hidden");
+        } else {
+            row.classList.add("hidden");
+        }
+    });
+}
+
+
+        // Use JavaScript to fetch the visit count using Ajax
+        var visitCountContainer = document.getElementById('visit-count');
+
+        fetch('/get-visit-count')
+            .then(response => response.json())
+            .then(data => {
+                visitCountContainer.textContent = data.visit_count;
+            });
+    
+
+        // Handle user deletion
+        document.querySelectorAll('.delete-user').forEach(deleteButton => {
+            deleteButton.addEventListener('click', function () {
+                const userId = this.getAttribute('data-id');
+                if (confirm('Are you sure you want to delete this user?')) {
+                    // Send an AJAX request to delete the user
+                    fetch(`/delete_user/${userId}`, {
+                        method: 'POST',
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                // User deleted successfully, you can remove the row from the table
+                                this.closest('tr').remove();
+                            } else {
+                                // Handle deletion error
+                                alert('Error deleting user');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

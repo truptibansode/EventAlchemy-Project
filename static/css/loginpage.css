@@ -1,0 +1,203 @@
+*{  
+    margin: auto;
+    padding: auto;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+.registerbody{
+    
+    margin: 10px;
+    margin-top: 30px;
+    align-items: center;
+    background:#f5efef;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.form-box {
+    max-width: 700px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background: #9b897d;
+    outline: 1px solid #72792c;
+    outline-offset: 10px;
+    color: #000;
+}
+
+
+.form-box h1{
+    font-size: 35px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    color:beige;
+    position: relative;
+}
+.form-box h1::after{
+    content: '';
+    width: 40px;
+    height: 2px;
+    border-radius: 1px;
+    background:beige;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.input-field{
+    background: #ece0e0;
+    margin:25px 50px;
+    padding: 0 20px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    /*max-height: 200px;
+    transition: max-height 0.5s;
+    overflow: hidden;*/
+}
+
+.input-field i{
+    align-items: center;
+}
+input{
+    text-align: left;
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+/*input:focus{
+    border-bottom: 2px solid #cf8252;
+}*/
+.input-field input[type="radio"] {
+    color: #555;
+    margin-left:40px;
+}
+
+form p{
+    text-align:center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+form p a{
+    text-decoration: none;
+    color:#ffffff ;
+}
+
+
+.btn-feild {
+    display: flex;
+    flex-direction: column; /* Arrange the button and text vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.btn-feild button {
+    background: #d6d3ce;
+    color: #614111;
+    height: 35px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    /* Add margin and other styles as needed */
+}
+
+
+.btn-feild button:hover {
+    background: #290907;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .form-box{
+        width: 90%;
+    }
+    .input-field {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .input-field input[type="radio"] {
+        margin-left: 0;
+    }
+
+    .top-flower, .flower-bottom, .top-flower-img{
+        display: none;
+    }
+}
+
+
+
+.input-group{
+    height: 380px;
+}
+/*.btn-feild button.disable{
+    background-color: #eaeaea;  
+    color: #555;
+}*/
+
+
+
+
+
+/*log-in page css starts here*/
+
+.container1{
+    width: 100%;
+    height: 50vh;  
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.form-box-1{
+    width: 100%;
+    margin-top: 170px;
+    max-width: 450px;
+    max-width: 450px;
+    position: relative;
+    padding: 40px 80px 10px 80px;
+    text-align: center;
+    border-radius: 20px;
+    background:#9b897d;
+    /*linear-gradient(#da6327,rgb(212, 74, 97))*/
+    padding: 20px;
+    outline: 1px solid  #72792c;
+    outline-offset: 10px;
+}
+
+.form-box-1 h1{
+    opacity: 1;
+    font-size: 35px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    color: beige;
+    position: relative;
+}
+.form-box-1 h1::after{
+    content: '';
+    width: 40px;
+    height: 2px;
+    border-radius: 1px;
+    background: beige;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
