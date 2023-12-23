@@ -16,13 +16,13 @@ token_serializer = URLSafeTimedSerializer('your_token_secret_key')
 
 
 app=Flask(__name__)
-app.config ['SECRET_KEY'] = "m0ni1989xyzgjhtb" 
+app.config ['SECRET_KEY'] = "your secret key" 
 
 
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587 
-app.config['MAIL_USERNAME']= 'trptbnsd@gmail.com'
-app.config['MAIL_PASSWORD']= 'mlha kfsc wpmf rbyu'
+app.config['MAIL_USERNAME']= 'your gmail address'
+app.config['MAIL_PASSWORD']= 'your gmail password'
 app.config['MAIL_USE_TLS'] = True
 
 mail = Mail(app)
